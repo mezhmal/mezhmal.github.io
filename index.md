@@ -1,3 +1,0 @@
-## Yes, it's me
-
-Content coming soon...

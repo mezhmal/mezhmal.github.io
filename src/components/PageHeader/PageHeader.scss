@@ -1,0 +1,14 @@
+@use '/src/assets/constants.scss';
+@use '/src/assets/pallete.scss';
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: pallete.$headerBg;
+
+  .container {
+    width: constants.$containerWidth;
+    margin: 0 50px;
+    padding: 16px 0;
+  }
+}
