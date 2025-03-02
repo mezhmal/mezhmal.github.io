@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import Gap from "/src/components/Gap/Gap.astro";
+import avatar from "./assets/avatar.png";
+import "./assets/Summary.scss";
+---
+
+<section>
+  <Gap height={80} />
+  Привет, меня зовут Сергей
+  <Gap height={32} />
+  <div class="avatar">
+    <Image src={avatar} alt="" />
+    <div>Я создаю информационные системы</div>
+  </div>
+  <Gap height={24} />
+  <ul class="contacts">
+    <li>
+      <div class="icon github"></div><a href="https://github.com/mezhmal"
+        >mezhmal</a
+      >
+    </li>
+    <li>
+      <div class="icon telegram"></div><a href="https://t.me/s_mezhmal"
+        >s_mezhmal</a
+      >
+    </li>
+    <li>
+      <div class="icon mail"></div><div class="mailName"></div>@gmail.com
+    </li>
+  </ul>
+  <Gap height={24} />
+  <p>
+    В 2006 году получил диплом инженера-программиста
+    <span class="nowrap">на факультете</span> компьютерных технологий. Первые
+    <span class="nowrap">8 лет</span> работал
+    <span class="nowrap">в телекоммуникационном</span> бизнесе, занимался развитием
+    <span class="nowrap">и эксплуатацией</span> оборудования
+    <span class="nowrap">в сети</span>
+    передачи данных <span class="nowrap">в Комсомольске-на-Амуре</span>. Затем
+    переехал <span class="nowrap">в Ростов-на-Дону</span>. Последние
+    <span class="nowrap">12 лет</span> проектирую
+    <span class="nowrap">и программирую</span> информационные системы.
+    <span class="nowrap">И это мне</span> безумно нравится!
+  </p>
+</section>

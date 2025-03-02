@@ -1,0 +1,9 @@
+---
+interface Props {
+  height: number;
+}
+
+const { height } = Astro.props;
+---
+
+<div style={{ height: `${height}px` }}></div>

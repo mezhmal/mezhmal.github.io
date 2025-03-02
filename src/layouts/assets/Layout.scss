@@ -1,0 +1,18 @@
+@use "@fontsource/roboto";
+@use '/src/assets/constants';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: constants.$textPrimaryFontSize;
+  background-image: url("./surname.svg");
+  background-repeat: no-repeat;
+  background-position: center 75px;
+}
+
+p {
+  margin: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
+}

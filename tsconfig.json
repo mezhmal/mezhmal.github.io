@@ -6,5 +6,12 @@
   ],
   "exclude": [
     "docs"
-  ]
+  ],
+  "compilerOptions": {
+    "paths": {
+      "/src/*": [
+        "./src/*"
+      ]
+    }
+  }
 }
