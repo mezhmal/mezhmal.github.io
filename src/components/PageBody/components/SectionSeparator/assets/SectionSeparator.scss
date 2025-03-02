@@ -1,0 +1,10 @@
+@use '/src/assets/constants';
+
+.separator {
+  width: constants.$containerWidth;
+  height: 12px;
+  margin: 48px 0;
+  background-image: url("./section-separator.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
