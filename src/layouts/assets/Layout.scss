@@ -1,18 +1,33 @@
-@use "@fontsource/roboto";
+@use '@fontsource-variable/rubik';
 @use '/src/assets/constants';
+@use '/src/assets/palette';
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik Variable', sans-serif;
   font-size: constants.$textPrimaryFontSize;
   background-image: url("./surname.svg");
   background-repeat: no-repeat;
-  background-position: center 75px;
+  background-position: center 88px;
 }
 
-p {
-  margin: 0;
+section {
+  width: constants.$containerWidth;
+  color: palette.$textPrimary;
+
+  h1 {
+    margin: 0;
+    font-size: constants.$headerPrimaryFontSize ;
+    font-weight: 500;
+    color: palette.$textStrong;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.8em;
+  }
+  
+  .nowrap {
+    white-space: nowrap;
+  }  
 }
 
-.nowrap {
-  white-space: nowrap;
-}

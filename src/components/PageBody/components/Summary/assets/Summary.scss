@@ -1,10 +1,6 @@
-@use '/src/assets/constants';
 @use '/src/assets/palette';
 
 section {
-  width: constants.$containerWidth;
-  color: palette.$textPrimary;
-
   .avatar {
     display: flex;
     align-items: center;
