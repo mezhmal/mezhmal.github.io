@@ -1,0 +1,118 @@
+---
+import "./assets/Expand.scss";
+
+interface Props {
+  isExpanded?: boolean;
+}
+
+const { isExpanded } = Astro.props;
+---
+
+<div data-isExpanded={isExpanded || false} is="expanding-container">
+  <div class="details"><slot /></div>
+  <!-- <expand-toggler></expand-toggler> -->
+  <button>
+    <span class="caption"></span>
+    <span class="icon"></span>
+  </button>
+</div>
+
+<script>
+  class ExpandingContainer extends HTMLDivElement {
+    container: HTMLDivElement;
+    button: HTMLButtonElement;
+    isExpandedAttrName: string;
+    isExpanded: boolean;
+
+    constructor() {
+      // Always call super first in constructor
+      super();
+      this.container = this;
+      this.button =
+        this.querySelector("button") || document.createElement("button");
+      this.isExpandedAttrName = "data-isExpanded";
+      this.isExpanded =
+        this.container.getAttribute(this.isExpandedAttrName) === "true";
+    }
+
+    connectedCallback() {
+      this.button.addEventListener("click", () => {
+        this.isExpanded = !this.isExpanded;
+        this.container.setAttribute(
+          this.isExpandedAttrName,
+          this.isExpanded ? "true" : "false",
+        );
+      });
+    }
+  }
+
+  customElements.define("expanding-container", ExpandingContainer, {
+    extends: "div",
+  });
+
+  /* 
+  class ExpandToggler extends HTMLElement {
+    container: HTMLElement | null;
+    button: HTMLButtonElement;
+    isExpandedAttrName: string;
+
+    constructor() {
+      // Always call super first in constructor
+      super();
+
+      this.container = this.parentElement;
+      this.button = document.createElement("button");
+      this.isExpandedAttrName = "data-isExpanded";
+    }
+
+    togglerClickHandler = () => {
+      console.log(this.container);
+
+      if (
+        !this.container ||
+        !this.container.hasAttribute(this.isExpandedAttrName)
+      ) {
+        return;
+      }
+
+      const isExpanded =
+        this.container.getAttribute(this.isExpandedAttrName) === "true";
+      if (isExpanded) {
+        this.container.setAttribute(this.isExpandedAttrName, "false");
+        this.button.textContent = "Подробнее";
+      } else {
+        this.container.setAttribute(this.isExpandedAttrName, "true");
+        this.button.textContent = "Свернуть";
+      }
+    };
+
+    connectedCallback() {
+      const shadow = this.attachShadow({ mode: "open" });
+      const style = document.createElement("style");
+      style.textContent = `
+        button {
+          border: none;
+          background: none;
+          cursor: pointer;
+          color: #4d4d4d;
+          font-family: "Rubik Variable", sans-serif;
+          font-size: 16px;
+          line-height: 1.8em;
+        }
+      `;
+
+      this.button.textContent =
+        this.container &&
+        this.container.getAttribute(this.isExpandedAttrName) === "true"
+          ? "Свернуть"
+          : "Подробнее";
+      this.button.addEventListener("click", this.togglerClickHandler);
+
+      shadow.appendChild(style);
+      shadow.appendChild(this.button);
+    }
+  }
+
+  customElements.define("expand-toggler", ExpandToggler);
+ */
+</script>

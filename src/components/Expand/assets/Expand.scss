@@ -1,0 +1,51 @@
+@use '/src/assets/palette';
+
+button {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 4px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: palette.$textSecondary;
+
+  .caption {
+    margin-right: 0.5em;
+
+    &::after {
+      content: 'Подробнее';
+    }
+  }
+
+  .icon {
+    display: block;
+    height: 1em;
+    width: 1em;
+    background-image: url('./arrow_icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 250ms ease;
+  }
+}
+
+.details {
+  display: none;
+}
+
+
+[data-isExpanded=true] {
+  .details {
+    display: inherit;
+  }
+
+  button {
+    .caption::after {
+      content: 'Свернуть'
+    }
+
+    .icon {
+      transform: rotate(-90deg)
+    }
+  }
+}

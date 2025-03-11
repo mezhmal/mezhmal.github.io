@@ -1,0 +1,69 @@
+---
+import Expand from "/src/components/Expand/Expand.astro";
+import Gap from "/src/components/Gap/Gap.astro";
+---
+
+<p>
+  C апреля по ноябрь 2024 года cделал систему электронного документооборота
+  <span class="nowrap">на основе</span> блокчейна
+</p>
+<Gap height={8} />
+<p>
+  В составе команды из 9 участников спроектировали, запрограммировали
+  <span class="nowrap">и передали</span>
+  <span class="nowrap">в эксплуатацию</span>
+  MVP-версию системы, которая
+  <span class="nowrap">на базе</span> смарт-контрактов сети блокчейн позволяет пользователям
+  заказывать банковские документы, отслеживать состояние готовности заказов
+  <span class="nowrap">и скачивать</span> готовые документы.
+</p>
+<Gap height={8} />
+<Expand>
+  <p>
+    Моей основной ответственностью <span class="nowrap">в этом</span> проекте
+    <span class="nowrap">был веб-фронтенд</span> системы
+    <span class="nowrap">на базе</span> библиотеки React
+    <span class="nowrap">без глобального</span> менеджера состояний. Фронтенд собирался
+    <span class="nowrap">в виде</span> модуля
+    <a href="https://webpack.js.org/concepts/module-federation/">
+      Webpack Module Federation
+    </a>
+    <span class="nowrap">
+      для
+      <a href="https://martinfowler.com/articles/micro-frontends.html">
+        микрофронтендной
+      </a>
+    </span> архитектуры.
+  </p>
+  <Gap height={8} />
+  <p>
+    Ключевые компоненты:
+    <ul>
+      <li>
+        <a href="https://tanstack.com/query/docs">TanStack Query</a> +
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+          >Fetch API</a
+        >
+        <span class="nowrap">для управления</span> HTTP-запросами
+      </li>
+      <li>
+        Графические компоненты <a href="https://ant.design/">Ant Design</a>
+      </li>
+      <li>
+        Библиотека для взаимодействия
+        <span class="nowrap">с криптопровайдером</span>
+        <a href="https://cryptopro.ru/products/cades/plugin">КриптоПро</a>
+      </li>
+      <li>
+        Проприетарная библиотека <span class="nowrap">от лаборатории</span>
+        <span class="nowrap">блокчейна Сбера</span>
+      </li>
+    </ul>
+  </p>
+  <Gap height={8} />
+  <p>
+    Дополнительно решал архитектурные <span class="nowrap">и дизайнерские</span>
+    задачи. <span class="nowrap">А еще</span> задачи кибербезопасности
+    <span class="nowrap">и автоматизации</span> процессов.
+  </p>
+</Expand>

@@ -1,18 +1,10 @@
 ---
+import Card1 from "./components/Card1/Card1.astro";
+import Card2 from "./components/Card2/Card2.astro";
+import Expand from "/src/components/Expand/Expand.astro";
 import Gap from "/src/components/Gap/Gap.astro";
 ---
 
 <h1>Мои инженерные успехи</h1>
 <Gap height={24} />
-<p>Сделал систему электронного докуметооборота на основе блокчейна</p>
-<p>C апреля по ноябрь 2024 года</p>
-<Gap height={8} />
-<p>
-  В составе команды из 9 участников спроектировали, запрограммировали
-  <span class="nowrap">и передали</span>
-  <span class="nowrap">в эксплуатацию</span>
-  систему, которая
-  <span class="nowrap">на базе</span> смарт-контрактов сети блокчейн позволяет пользователям
-  заказывать банковские документы, отслеживать состояние готовности заказов
-  <span class="nowrap">и скачивать</span> готовые документы.
-</p>
+<Card1 />
